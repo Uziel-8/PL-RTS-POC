@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bpj7ji2bxwnvn"]
+
+[ext_resource type="Texture2D" uid="uid://c0of780612oc" path="res://Graphics/Slime1/Run/Slime1_Run_full.png" id="1_dhtcx"]
+[ext_resource type="Script" uid="uid://cvxaaksl5nyiw" path="res://Units/enemy_footman.gd" id="1_n74wd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n74wd"]
+atlas = ExtResource("1_dhtcx")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qd6x"]
+atlas = ExtResource("1_dhtcx")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pa2om"]
+atlas = ExtResource("1_dhtcx")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7cqv"]
+atlas = ExtResource("1_dhtcx")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x37bi"]
+atlas = ExtResource("1_dhtcx")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sspgj"]
+atlas = ExtResource("1_dhtcx")
+region = Rect2(320, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1yyv"]
+atlas = ExtResource("1_dhtcx")
+region = Rect2(384, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30ldf"]
+atlas = ExtResource("1_dhtcx")
+region = Rect2(448, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2jwfy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n74wd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qd6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pa2om")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7cqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x37bi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sspgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1yyv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30ldf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oct3j"]
+
+[node name="EnemyFootman" type="CharacterBody2D" unique_id=209799906 groups=["Enemies"]]
+scale = Vector2(2, 2)
+script = ExtResource("1_n74wd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=786164578]
+sprite_frames = SubResource("SpriteFrames_2jwfy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=492363501]
+shape = SubResource("CircleShape2D_oct3j")

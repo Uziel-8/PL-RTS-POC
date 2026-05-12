@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ccbrxkymbcd1w"]
+
+[ext_resource type="PackedScene" uid="uid://4xelw3eqmby2" path="res://Units/player_footman.tscn" id="1_tumq0"]
+[ext_resource type="PackedScene" uid="uid://bpj7ji2bxwnvn" path="res://Units/enemy_footman.tscn" id="2_k5f4k"]
+
+[node name="Level" type="Node2D" unique_id=231704338]
+
+[node name="PlayerFootman" parent="." unique_id=1799004965 instance=ExtResource("1_tumq0")]
+position = Vector2(48, 69)
+
+[node name="EnemyFootman" parent="." unique_id=589809425 instance=ExtResource("2_k5f4k")]
+position = Vector2(324, 37)
