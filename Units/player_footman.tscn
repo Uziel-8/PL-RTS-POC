@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cemd5xyc8ibbc" path="res://Units/player_footman.gd" id="1_fxph5"]
 [ext_resource type="Texture2D" uid="uid://b67ucakmrlvd5" path="res://Graphics/Swordsman_lvl1/With_shadow/Swordsman_lvl1_Idle_with_shadow.png" id="2_0e3q6"]
+[ext_resource type="Resource" uid="uid://uucgbpnkvr3b" path="res://Resources/footman_data.tres" id="2_7scdl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7scdl"]
 atlas = ExtResource("2_0e3q6")
@@ -104,6 +105,7 @@ radius = 72.00694
 [node name="PlayerFootman" type="CharacterBody2D" unique_id=1041793335 groups=["PlayerUnits"]]
 scale = Vector2(2, 2)
 script = ExtResource("1_fxph5")
+unit_data = ExtResource("2_7scdl")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=78401551]
 sprite_frames = SubResource("SpriteFrames_pp3vn")

@@ -12,6 +12,8 @@ var target: Node2D = null
 
 @export var speed: float = 100.0
 @export var stop_distance: float = 10.0
+@export var unit_data: UnitData
+
 
 @onready var detection_zone: Area2D = $DetectionZone
 
@@ -46,8 +48,14 @@ func _on_detection_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemies") and target == null:
 		target = body
 		state = state_list.CHASE
+		#if body.has_method(take_damage()):
+		body.take_damage(unit_data.damage)
 
 func _on_detection_zone_body_exited(body: Node2D) -> void:
 	if body == target:
 		target == null
 		state = state_list.IDLE
+
+func take_damage(damage):
+	##this could be componentized
+	print(damage)

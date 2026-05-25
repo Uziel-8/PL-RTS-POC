@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c0of780612oc" path="res://Graphics/Slime1/Run/Slime1_Run_full.png" id="1_dhtcx"]
 [ext_resource type="Script" uid="uid://cvxaaksl5nyiw" path="res://Units/enemy_footman.gd" id="1_n74wd"]
+[ext_resource type="Resource" uid="uid://uucgbpnkvr3b" path="res://Resources/footman_data.tres" id="2_2qd6x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n74wd"]
 atlas = ExtResource("1_dhtcx")
@@ -72,6 +73,7 @@ animations = [{
 [node name="EnemyFootman" type="CharacterBody2D" unique_id=209799906 groups=["Enemies"]]
 scale = Vector2(2, 2)
 script = ExtResource("1_n74wd")
+unit_data = ExtResource("2_2qd6x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=786164578]
 sprite_frames = SubResource("SpriteFrames_2jwfy")
