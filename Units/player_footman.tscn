@@ -100,10 +100,12 @@ animations = [{
 size = Vector2(18, 24)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0e3q6"]
-radius = 72.00694
+radius = 183.04372
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7scdl"]
+radius = 23.021729
 
 [node name="PlayerFootman" type="CharacterBody2D" unique_id=1041793335 groups=["PlayerUnits"]]
-scale = Vector2(2, 2)
 script = ExtResource("1_fxph5")
 unit_data = ExtResource("2_7scdl")
 
@@ -120,4 +122,16 @@ shape = SubResource("RectangleShape2D_wrr3y")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone" unique_id=1323228648]
 shape = SubResource("CircleShape2D_0e3q6")
 
+[node name="AttackingZone" type="Area2D" parent="." unique_id=1140992648]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackingZone" unique_id=1770523227]
+shape = SubResource("CircleShape2D_7scdl")
+debug_color = Color(0.99080807, 0, 0.2795052, 0.41960785)
+
+[node name="AttackCooldown" type="Timer" parent="." unique_id=1646904895]
+wait_time = 0.5
+
 [connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]
+[connection signal="body_entered" from="AttackingZone" to="." method="_on_attacking_zone_body_entered"]
+[connection signal="body_exited" from="AttackingZone" to="." method="_on_attacking_zone_body_exited"]
+[connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]

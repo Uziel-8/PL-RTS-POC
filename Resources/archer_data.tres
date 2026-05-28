@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://qqqain4h0vo1"]
+
+[ext_resource type="Script" uid="uid://bme3vjn2s834" path="res://Resources/unit_data.gd" id="1_qckrb"]
+
+[resource]
+script = ExtResource("1_qckrb")
+name = "Archer"
+description = "Pointy stick deliveryman"
+health = 50
+damage = 10
+is_ranged = true
+speed = 70.0
+metadata/_custom_type_script = "uid://bme3vjn2s834"

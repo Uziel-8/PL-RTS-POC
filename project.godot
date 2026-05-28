@@ -15,6 +15,11 @@ run/main_scene="uid://ccbrxkymbcd1w"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EventBus="*uid://bucek5slt63mt"
+Globals="*uid://ctm02e4ovu585"
+
 [global_group]
 
 PlayerUnits=""

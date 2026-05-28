@@ -1,12 +1,22 @@
 [gd_scene format=3 uid="uid://ccbrxkymbcd1w"]
 
-[ext_resource type="PackedScene" uid="uid://4xelw3eqmby2" path="res://Units/player_footman.tscn" id="1_tumq0"]
 [ext_resource type="PackedScene" uid="uid://bpj7ji2bxwnvn" path="res://Units/enemy_footman.tscn" id="2_k5f4k"]
+[ext_resource type="PackedScene" uid="uid://0qbd6pyfadpt" path="res://Scenes/barracks.tscn" id="3_6phgx"]
+[ext_resource type="PackedScene" uid="uid://cisiejowbhwwx" path="res://Scenes/hud.tscn" id="4_81xng"]
 
 [node name="Level" type="Node2D" unique_id=231704338]
 
-[node name="PlayerFootman" parent="." unique_id=1799004965 instance=ExtResource("1_tumq0")]
-position = Vector2(48, 69)
+[node name="Barracks" parent="." unique_id=459267182 instance=ExtResource("3_6phgx")]
+position = Vector2(68, 166)
 
 [node name="EnemyFootman" parent="." unique_id=589809425 instance=ExtResource("2_k5f4k")]
-position = Vector2(324, 37)
+position = Vector2(359, 99)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1528778811]
+
+[node name="HUD" parent="Camera2D" unique_id=542633204 instance=ExtResource("4_81xng")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5

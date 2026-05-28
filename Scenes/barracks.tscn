@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://0qbd6pyfadpt"]
+
+[ext_resource type="Texture2D" uid="uid://b4lc2m3iwasae" path="res://Graphics/GuildHall/just_hall_exp.png" id="1_7aoon"]
+[ext_resource type="Script" uid="uid://cps82yvb38d0b" path="res://Scenes/barracks.gd" id="1_coeoc"]
+
+[node name="Barracks" type="Node2D" unique_id=459267182]
+script = ExtResource("1_coeoc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=252187468]
+position = Vector2(0, -69)
+texture = ExtResource("1_7aoon")

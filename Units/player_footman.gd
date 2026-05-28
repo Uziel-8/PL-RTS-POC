@@ -4,18 +4,22 @@ enum state_list {
 	IDLE,
 	WANDER,
 	CHASE,
+	ATTACKING,
 	
 }
 
 var state = state_list.WANDER
 var target: Node2D = null
 
-@export var speed: float = 100.0
+
 @export var stop_distance: float = 10.0
 @export var unit_data: UnitData
-
+@export var speed: float = 100.0
 
 @onready var detection_zone: Area2D = $DetectionZone
+@onready var attack_cooldown: Timer = $AttackCooldown
+
+@onready var can_attack: bool = true
 
 
 func _physics_process(delta: float) -> void:
@@ -26,6 +30,8 @@ func _physics_process(delta: float) -> void:
 			_wander()
 		state_list.CHASE:
 			_chase()
+		state_list.ATTACKING:
+			_attacking()
 	move_and_slide()
 
 func _chase():
@@ -37,25 +43,45 @@ func _chase():
 	var distance: float = global_position.distance_to(target.global_position)
 	
 	if distance > stop_distance:
-		velocity = direction * speed
+		velocity = direction * unit_data.speed
 	else:
 		velocity = Vector2.ZERO
 
 func _wander():
-	velocity.x = 50.0
+	velocity.x = unit_data.speed * 0.5
 
 func _on_detection_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemies") and target == null:
 		target = body
 		state = state_list.CHASE
 		#if body.has_method(take_damage()):
-		body.take_damage(unit_data.damage)
+		
 
 func _on_detection_zone_body_exited(body: Node2D) -> void:
 	if body == target:
 		target == null
-		state = state_list.IDLE
+		state = state_list.WANDER
 
 func take_damage(damage):
 	##this could be componentized
-	print(damage)
+	print(damage, " player got hit")
+
+
+func _on_attacking_zone_body_entered(body: Node2D) -> void:
+	if state == state_list.CHASE and body == target:
+		state = state_list.ATTACKING
+
+func _on_attacking_zone_body_exited(body: Node2D) -> void:
+	if state == state_list.ATTACKING and body == target:
+		state = state_list.CHASE
+
+func _attacking():
+	if can_attack:
+		attack_cooldown.start()
+		target.take_damage(unit_data.damage)
+		can_attack = false
+
+
+
+func _on_attack_cooldown_timeout() -> void:
+	can_attack = true

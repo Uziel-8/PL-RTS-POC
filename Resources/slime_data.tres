@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://dxaa8m3brv7kf"]
+
+[ext_resource type="Script" uid="uid://bme3vjn2s834" path="res://Resources/unit_data.gd" id="1_8nnu6"]
+
+[resource]
+script = ExtResource("1_8nnu6")
+name = "Slime"
+description = "Pleb slime"
+health = 60
+damage = 10
+speed = 50.0
+metadata/_custom_type_script = "uid://bme3vjn2s834"
