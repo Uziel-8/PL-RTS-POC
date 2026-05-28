@@ -62,9 +62,10 @@ func _on_detection_zone_body_exited(body: Node2D) -> void:
 		target == null
 		state = state_list.WANDER
 
-func take_damage(damage):
+func take_damage(damage, knockback):
 	##this could be componentized
 	print(damage, " player got hit")
+	##add in something for getting knocked back
 
 
 func _on_attacking_zone_body_entered(body: Node2D) -> void:
@@ -78,7 +79,7 @@ func _on_attacking_zone_body_exited(body: Node2D) -> void:
 func _attacking():
 	if can_attack:
 		attack_cooldown.start()
-		target.take_damage(unit_data.damage)
+		target.take_damage(unit_data.damage, unit_data.knockback)
 		can_attack = false
 
 

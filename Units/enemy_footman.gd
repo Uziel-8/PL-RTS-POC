@@ -10,11 +10,14 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
-func take_damage(damage):
+func take_damage(damage, knockback):
 	##this could be componentized
 	print(damage, " enemy got hit")
 	health -= damage
 	print("new health: ", health)
+	print("Knockback: ", knockback)
+	##MAKE THE BELOW LESS SHIT
+	position.x += knockback
 	if health <= 0:
 		_die()
 

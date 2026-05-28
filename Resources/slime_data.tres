@@ -8,5 +8,6 @@ name = "Slime"
 description = "Pleb slime"
 health = 60
 damage = 10
+knockback = 5.0
 speed = 50.0
 metadata/_custom_type_script = "uid://bme3vjn2s834"
