@@ -64,5 +64,11 @@ offset_right = 20.0
 offset_bottom = 40.0
 grow_horizontal = 2
 
+[node name="GoldLabel" type="Label" parent="Panel2" unique_id=1675162689]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Player Gold: 777"
+
 [connection signal="pressed" from="SpawnButtons/HSplitContainer/FootmanButton" to="." method="_on_footman_button_pressed"]
 [connection signal="pressed" from="SpawnButtons/HSplitContainer2/ArcherButton" to="." method="_on_archer_button_pressed"]

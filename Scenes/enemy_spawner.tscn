@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://chfjgktrlmsh5"]
+
+[ext_resource type="Texture2D" uid="uid://bowtxou0e8jln" path="res://Graphics/CaveObjects/Objects_separately/128/magic_circle_light_shadow.png" id="1_4l55s"]
+[ext_resource type="Script" uid="uid://cur735y5kahhd" path="res://Scenes/enemy_spawner.gd" id="1_8h7h8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4l55s"]
+radius = 46.010868
+
+[node name="EnemySpawner" type="Node2D" unique_id=579454150]
+script = ExtResource("1_8h7h8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=830058098]
+texture = ExtResource("1_4l55s")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1471264934]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=785334608]
+shape = SubResource("CircleShape2D_4l55s")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1681791911]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

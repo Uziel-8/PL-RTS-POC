@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bpj7ji2bxwnvn" path="res://Units/enemy_footman.tscn" id="2_k5f4k"]
 [ext_resource type="PackedScene" uid="uid://0qbd6pyfadpt" path="res://Scenes/barracks.tscn" id="3_6phgx"]
 [ext_resource type="PackedScene" uid="uid://cisiejowbhwwx" path="res://Scenes/hud.tscn" id="4_81xng"]
+[ext_resource type="PackedScene" uid="uid://chfjgktrlmsh5" path="res://Scenes/enemy_spawner.tscn" id="4_wqkje"]
 
 [node name="Level" type="Node2D" unique_id=231704338]
 
@@ -20,3 +21,6 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+
+[node name="EnemySpawner" parent="." unique_id=579454150 instance=ExtResource("4_wqkje")]
+position = Vector2(490, 114)

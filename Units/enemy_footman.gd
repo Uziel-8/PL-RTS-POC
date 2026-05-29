@@ -22,4 +22,5 @@ func take_damage(damage, knockback):
 		_die()
 
 func _die():
+	EventBus.gold_changed.emit(unit_data.gold_bounty)
 	self.queue_free()
