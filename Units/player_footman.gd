@@ -54,19 +54,11 @@ func _on_detection_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemies") and target == null:
 		target = body
 		state = state_list.CHASE
-		#if body.has_method(take_damage()):
-		
 
 func _on_detection_zone_body_exited(body: Node2D) -> void:
 	if body == target:
-		target == null
+		target = null
 		state = state_list.WANDER
-
-func take_damage(damage, knockback):
-	##this could be componentized
-	print(damage, " player got hit")
-	##add in something for getting knocked back
-
 
 func _on_attacking_zone_body_entered(body: Node2D) -> void:
 	if state == state_list.CHASE and body == target:
@@ -77,6 +69,9 @@ func _on_attacking_zone_body_exited(body: Node2D) -> void:
 		state = state_list.CHASE
 
 func _attacking():
+	if not is_instance_valid(target):
+		state = state_list.WANDER
+		return
 	if can_attack:
 		attack_cooldown.start()
 		target.take_damage(unit_data.damage, unit_data.knockback)
@@ -86,3 +81,9 @@ func _attacking():
 
 func _on_attack_cooldown_timeout() -> void:
 	can_attack = true
+
+
+func take_damage(damage, knockback):
+	##this could be componentized
+	print(damage, " player got hit")
+	##add in something for getting knocked back
