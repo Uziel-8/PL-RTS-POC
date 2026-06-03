@@ -11,16 +11,36 @@
 position = Vector2(68, 166)
 
 [node name="EnemyFootman" parent="." unique_id=589809425 instance=ExtResource("2_k5f4k")]
-position = Vector2(361, 26)
+position = Vector2(294, 47)
+
+[node name="EnemyFootman2" parent="." unique_id=209799906 instance=ExtResource("2_k5f4k")]
+position = Vector2(610, 82)
+
+[node name="EnemyFootman3" parent="." unique_id=433091794 instance=ExtResource("2_k5f4k")]
+position = Vector2(486, 102)
+
+[node name="EnemyFootman4" parent="." unique_id=151206520 instance=ExtResource("2_k5f4k")]
+position = Vector2(364, 180)
+
+[node name="EnemyFootman5" parent="." unique_id=610491336 instance=ExtResource("2_k5f4k")]
+position = Vector2(528, 209)
+
+[node name="EnemyFootman6" parent="." unique_id=899177180 instance=ExtResource("2_k5f4k")]
+position = Vector2(757, 160)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1528778811]
+position = Vector2(499, 12)
 
 [node name="HUD" parent="Camera2D" unique_id=542633204 instance=ExtResource("4_81xng")]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -441.0
+offset_top = -225.0
+offset_right = -441.0
+offset_bottom = -225.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="EnemySpawner" parent="." unique_id=579454150 instance=ExtResource("4_wqkje")]
-position = Vector2(490, 114)
+position = Vector2(749, 97)

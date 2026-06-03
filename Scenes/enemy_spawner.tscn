@@ -18,7 +18,7 @@ texture = ExtResource("1_4l55s")
 shape = SubResource("CircleShape2D_4l55s")
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=1681791911]
-wait_time = 3.0
+wait_time = 4.0
 autostart = true
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

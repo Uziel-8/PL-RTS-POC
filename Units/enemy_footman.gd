@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 @onready var health = unit_data.health
 
+signal died
+
 func _physics_process(delta: float) -> void:
 	velocity.x = -50.0
 	
@@ -24,3 +26,4 @@ func take_damage(damage, knockback):
 func _die():
 	EventBus.gold_changed.emit(unit_data.gold_bounty)
 	self.queue_free()
+	died.emit()
