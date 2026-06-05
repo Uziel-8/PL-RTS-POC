@@ -22,6 +22,13 @@ var target: Node2D = null
 @onready var can_attack: bool = true
 
 
+func _ready() -> void:
+	var attacking_collision: CollisionShape2D = $AttackingZone/AttackingCollision
+	var detection_collision: CollisionShape2D = $DetectionZone/DetectionCollision
+	detection_collision.shape.radius = unit_data.detection_radius
+	attacking_collision.shape.radius = unit_data.attack_radius
+	print(attacking_collision.shape.radius, detection_collision.shape.radius)
+
 func _physics_process(delta: float) -> void:
 	match state:
 		state_list.IDLE:
@@ -109,4 +116,3 @@ func _on_attack_cooldown_timeout() -> void:
 func take_damage(damage, knockback):
 	##this could be componentized
 	print(damage, " player got hit")
-	##add in something for getting knocked back

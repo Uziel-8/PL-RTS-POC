@@ -10,5 +10,5 @@ health = 60
 damage = 10
 knockback = 5.0
 speed = 50.0
-gold_bounty = 1
+gold_bounty = 3
 metadata/_custom_type_script = "uid://bme3vjn2s834"
