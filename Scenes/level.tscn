@@ -32,15 +32,8 @@ position = Vector2(757, 160)
 position = Vector2(499, 12)
 
 [node name="HUD" parent="Camera2D" unique_id=542633204 instance=ExtResource("4_81xng")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -441.0
-offset_top = -225.0
-offset_right = -441.0
-offset_bottom = -225.0
-grow_horizontal = 1
-grow_vertical = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="EnemySpawner" parent="." unique_id=579454150 instance=ExtResource("4_wqkje")]
 position = Vector2(749, 97)
