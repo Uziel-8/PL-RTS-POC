@@ -29,11 +29,9 @@ position = Vector2(528, 209)
 position = Vector2(757, 160)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1528778811]
-position = Vector2(499, 12)
-
-[node name="HUD" parent="Camera2D" unique_id=542633204 instance=ExtResource("4_81xng")]
-size_flags_horizontal = 3
-size_flags_vertical = 3
+position = Vector2(490, 247)
 
 [node name="EnemySpawner" parent="." unique_id=579454150 instance=ExtResource("4_wqkje")]
 position = Vector2(749, 97)
+
+[node name="HUD" parent="." unique_id=542633204 instance=ExtResource("4_81xng")]

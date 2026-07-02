@@ -2,17 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dt2baboabn6yy" path="res://Scenes/hud.gd" id="1_e0onf"]
 
-[node name="HUD" type="Control" unique_id=542633204]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="HUD" type="CanvasLayer" unique_id=441909154]
 script = ExtResource("1_e0onf")
 
 [node name="SpawnButtons" type="Panel" parent="." unique_id=2158896]
-layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -55,7 +48,6 @@ layout_mode = 2
 text = "0"
 
 [node name="Panel2" type="Panel" parent="." unique_id=957227844]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -71,13 +63,12 @@ offset_bottom = 23.0
 text = "Player Gold: 777"
 
 [node name="UnitStatsPanel" type="Panel" parent="." unique_id=639722961]
-layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -20.0
-offset_right = 159.0
-offset_bottom = 95.0
+offset_top = -62.25
+offset_right = 259.0
+offset_bottom = 62.25
 grow_vertical = 2
 
 [node name="UnitStatsLabel" type="Label" parent="UnitStatsPanel" unique_id=1135862752]

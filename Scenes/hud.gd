@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 
 @onready var gold_label: Label = $Panel2/GoldLabel
@@ -12,6 +12,14 @@ func _ready() -> void:
 	EventBus.gold_changed.connect(_on_gold_changed)
 	
 	_stats_updated()
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("Tab"):
+		if self.visible == false:
+			self.visible = true
+		else:
+			self.visible = false
+
 
 func _on_footman_button_pressed() -> void:
 	_spawn(Globals.FOOTMAN)
