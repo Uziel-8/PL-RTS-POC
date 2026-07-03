@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dxfqiadeh0n45"]
+
+[ext_resource type="Texture2D" uid="uid://b4lc2m3iwasae" path="res://Graphics/GuildHall/just_hall_exp.png" id="1_qelc3"]
+
+[node name="ArcheryRange" type="Node2D" unique_id=1442651062]
+position = Vector2(-1, -69)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=227639550]
+modulate = Color(0.2097114, 0.38148335, 0.19804096, 1)
+texture = ExtResource("1_qelc3")

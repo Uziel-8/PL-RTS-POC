@@ -31,6 +31,7 @@ layout_mode = 2
 text = "0"
 
 [node name="HSplitContainer2" type="HSplitContainer" parent="SpawnButtons" unique_id=1340503957]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -43,7 +44,50 @@ grow_vertical = 0
 layout_mode = 2
 text = "Spawn Archer"
 
-[node name="FootmanCost" type="Label" parent="SpawnButtons/HSplitContainer2" unique_id=623060087]
+[node name="ArcherCost" type="Label" parent="SpawnButtons/HSplitContainer2" unique_id=623060087]
+layout_mode = 2
+text = "0"
+
+[node name="BuildingMenu" type="Panel" parent="." unique_id=1706281247]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 313.0
+offset_top = -364.0
+offset_right = 562.0
+offset_bottom = -278.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HSplitContainer" type="HSplitContainer" parent="BuildingMenu" unique_id=747605685]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RangeButton" type="Button" parent="BuildingMenu/HSplitContainer" unique_id=1174246798]
+layout_mode = 2
+text = "Build Archery Range"
+
+[node name="RangeCost" type="Label" parent="BuildingMenu/HSplitContainer" unique_id=197903617]
+layout_mode = 2
+text = "0"
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="BuildingMenu" unique_id=1495473967]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="ForgeButton" type="Button" parent="BuildingMenu/HSplitContainer2" unique_id=562305070]
+layout_mode = 2
+text = "Build Forge"
+
+[node name="ForgeCost" type="Label" parent="BuildingMenu/HSplitContainer2" unique_id=109396518]
 layout_mode = 2
 text = "0"
 
@@ -63,6 +107,7 @@ offset_bottom = 23.0
 text = "Player Gold: 777"
 
 [node name="UnitStatsPanel" type="Panel" parent="." unique_id=639722961]
+visible = false
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -88,6 +133,7 @@ grow_vertical = 2
 text = "Upgrade Footman"
 
 [node name="UpgradeArcher" type="Button" parent="UnitStatsPanel" unique_id=1138862568]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -99,5 +145,7 @@ text = "Upgrade Archer"
 
 [connection signal="pressed" from="SpawnButtons/HSplitContainer/FootmanButton" to="." method="_on_footman_button_pressed"]
 [connection signal="pressed" from="SpawnButtons/HSplitContainer2/ArcherButton" to="." method="_on_archer_button_pressed"]
+[connection signal="pressed" from="BuildingMenu/HSplitContainer/RangeButton" to="." method="_on_range_button_pressed"]
+[connection signal="pressed" from="BuildingMenu/HSplitContainer2/ForgeButton" to="." method="_on_forge_button_pressed"]
 [connection signal="pressed" from="UnitStatsPanel/UpgradeFootmen" to="." method="_on_upgrade_footmen_pressed"]
 [connection signal="pressed" from="UnitStatsPanel/UpgradeArcher" to="." method="_on_upgrade_archer_pressed"]

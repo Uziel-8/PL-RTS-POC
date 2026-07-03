@@ -10,6 +10,7 @@ func _ready() -> void:
 	gold_label.text = str("Player Gold: ", Globals.player_gold)
 	
 	EventBus.gold_changed.connect(_on_gold_changed)
+	EventBus.buildings_changed.connect(_on_buildings_changed)
 	
 	_stats_updated()
 
@@ -35,9 +36,16 @@ func _on_gold_changed(change: int):
 	Globals.player_gold += change
 	gold_label.text = str("Player Gold: ", Globals.player_gold)
 
+func _on_buildings_changed(building):
+	if building == "archery_range":
+		$SpawnButtons/HSplitContainer2.visible = true
+	if building == "forge":
+		$UnitStatsPanel.visible = true
+
 func _stats_updated():
 	unit_stats_label.text = str(FOOTMAN_DATA.name, ": Damage: ", FOOTMAN_DATA.damage, ", Health: ", FOOTMAN_DATA.health, ", Speed: ", FOOTMAN_DATA.speed) + "\n" + str(ARCHER_DATA.name, ": Damage: ", ARCHER_DATA.damage, ", Health: ", ARCHER_DATA.health, ", Speed: ", ARCHER_DATA.speed)
 
+##Need to make footman and archer cost labels update
 
 func _on_upgrade_footmen_pressed() -> void:
 	var cost = 10
@@ -54,3 +62,11 @@ func _on_upgrade_archer_pressed() -> void:
 		ARCHER_DATA.speed += 10
 		EventBus.gold_changed.emit(-cost)
 		_stats_updated()
+
+
+func _on_range_button_pressed() -> void:
+	EventBus.buildings_changed.emit("archery_range")
+
+
+func _on_forge_button_pressed() -> void:
+	EventBus.buildings_changed.emit("forge")

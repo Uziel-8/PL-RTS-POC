@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://ccbrxkymbcd1w"]
 
+[ext_resource type="Script" uid="uid://wsqer1yhutb" path="res://Scenes/level.gd" id="1_0f350"]
 [ext_resource type="PackedScene" uid="uid://bpj7ji2bxwnvn" path="res://Units/enemy_footman.tscn" id="2_k5f4k"]
 [ext_resource type="PackedScene" uid="uid://0qbd6pyfadpt" path="res://Scenes/barracks.tscn" id="3_6phgx"]
 [ext_resource type="PackedScene" uid="uid://cisiejowbhwwx" path="res://Scenes/hud.tscn" id="4_81xng"]
 [ext_resource type="PackedScene" uid="uid://chfjgktrlmsh5" path="res://Scenes/enemy_spawner.tscn" id="4_wqkje"]
+[ext_resource type="PackedScene" uid="uid://dxfqiadeh0n45" path="res://Scenes/archery_range.tscn" id="5_wqkje"]
 
 [node name="Level" type="Node2D" unique_id=231704338]
+script = ExtResource("1_0f350")
 
 [node name="Barracks" parent="." unique_id=459267182 instance=ExtResource("3_6phgx")]
 position = Vector2(68, 166)
@@ -35,3 +38,7 @@ position = Vector2(490, 247)
 position = Vector2(749, 97)
 
 [node name="HUD" parent="." unique_id=542633204 instance=ExtResource("4_81xng")]
+
+[node name="ArcheryRange" parent="." unique_id=1442651062 instance=ExtResource("5_wqkje")]
+visible = false
+position = Vector2(-21, 302)
