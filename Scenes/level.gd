@@ -7,3 +7,5 @@ func _ready() -> void:
 func _on_buildings_changed(building):
 	if building == "archery_range":
 		$ArcheryRange.visible = true
+	if building == "forge":
+		$Forge.visible = true

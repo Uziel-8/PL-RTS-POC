@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cisiejowbhwwx" path="res://Scenes/hud.tscn" id="4_81xng"]
 [ext_resource type="PackedScene" uid="uid://chfjgktrlmsh5" path="res://Scenes/enemy_spawner.tscn" id="4_wqkje"]
 [ext_resource type="PackedScene" uid="uid://dxfqiadeh0n45" path="res://Scenes/archery_range.tscn" id="5_wqkje"]
+[ext_resource type="PackedScene" uid="uid://do3uf0cyq1abt" path="res://Scenes/forge.tscn" id="7_8c0lf"]
 
 [node name="Level" type="Node2D" unique_id=231704338]
 script = ExtResource("1_0f350")
@@ -42,3 +43,7 @@ position = Vector2(749, 97)
 [node name="ArcheryRange" parent="." unique_id=1442651062 instance=ExtResource("5_wqkje")]
 visible = false
 position = Vector2(-21, 302)
+
+[node name="Forge" parent="." unique_id=2032023340 instance=ExtResource("7_8c0lf")]
+visible = false
+position = Vector2(-62, -18)

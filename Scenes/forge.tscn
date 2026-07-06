@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://do3uf0cyq1abt"]
+
+[ext_resource type="Texture2D" uid="uid://b4lc2m3iwasae" path="res://Graphics/GuildHall/just_hall_exp.png" id="1_w38dr"]
+
+[node name="Forge" type="Node2D" unique_id=2032023340]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=86909689]
+modulate = Color(0.56299335, 0, 0.091112606, 1)
+position = Vector2(0, -69)
+texture = ExtResource("1_w38dr")
