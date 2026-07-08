@@ -2,9 +2,18 @@
 
 [ext_resource type="Texture2D" uid="uid://b4lc2m3iwasae" path="res://Graphics/GuildHall/just_hall_exp.png" id="1_qelc3"]
 
-[node name="ArcheryRange" type="Node2D" unique_id=1442651062]
-position = Vector2(-1, -69)
+[sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
+radius = 82.29824
+
+[node name="ArcheryRange" type="StaticBody2D" unique_id=533858672]
+collision_layer = 4
+collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=227639550]
 modulate = Color(0.2097114, 0.38148335, 0.19804096, 1)
+position = Vector2(0, -69)
 texture = ExtResource("1_qelc3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=159635147]
+position = Vector2(2, -66)
+shape = SubResource("CircleShape2D_yf5fn")

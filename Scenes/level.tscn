@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://chfjgktrlmsh5" path="res://Scenes/enemy_spawner.tscn" id="4_wqkje"]
 [ext_resource type="PackedScene" uid="uid://dxfqiadeh0n45" path="res://Scenes/archery_range.tscn" id="5_wqkje"]
 [ext_resource type="PackedScene" uid="uid://do3uf0cyq1abt" path="res://Scenes/forge.tscn" id="7_8c0lf"]
+[ext_resource type="Texture2D" uid="uid://cayqbuug2ypo3" path="res://Graphics/Ruins/Assets_shadow/Brown-gray_ruins2.png" id="8_754fn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 40.0
 
 [node name="Level" type="Node2D" unique_id=231704338]
 script = ExtResource("1_0f350")
@@ -47,3 +51,15 @@ position = Vector2(-21, 302)
 [node name="Forge" parent="." unique_id=2032023340 instance=ExtResource("7_8c0lf")]
 visible = false
 position = Vector2(-62, -18)
+
+[node name="Rock" type="StaticBody2D" parent="." unique_id=934960808]
+position = Vector2(284, 179)
+collision_layer = 16
+collision_mask = 35
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock" unique_id=2027133625]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rock" unique_id=314818540]
+position = Vector2(0, -2)
+texture = ExtResource("8_754fn")

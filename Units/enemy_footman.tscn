@@ -63,7 +63,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_30ldf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -71,6 +71,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_oct3j"]
 
 [node name="EnemyFootman" type="CharacterBody2D" unique_id=209799906 groups=["Enemies"]]
+collision_layer = 2
+collision_mask = 21
 script = ExtResource("1_n74wd")
 unit_data = ExtResource("2_2qd6x")
 
