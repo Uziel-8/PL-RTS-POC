@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bpj7ji2bxwnvn" path="res://Units/enemy_footman.tscn" id="2_k5f4k"]
 [ext_resource type="PackedScene" uid="uid://0qbd6pyfadpt" path="res://Scenes/barracks.tscn" id="3_6phgx"]
 [ext_resource type="PackedScene" uid="uid://cisiejowbhwwx" path="res://Scenes/hud.tscn" id="4_81xng"]
+[ext_resource type="Resource" uid="uid://dxaa8m3brv7kf" path="res://Resources/slime_data.tres" id="4_bvt00"]
 [ext_resource type="PackedScene" uid="uid://chfjgktrlmsh5" path="res://Scenes/enemy_spawner.tscn" id="4_wqkje"]
 [ext_resource type="PackedScene" uid="uid://dxfqiadeh0n45" path="res://Scenes/archery_range.tscn" id="5_wqkje"]
 [ext_resource type="PackedScene" uid="uid://do3uf0cyq1abt" path="res://Scenes/forge.tscn" id="7_8c0lf"]
@@ -12,35 +13,54 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 40.0
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_bvt00"]
+vertices = PackedVector2Array(255.75, 209.57031, -57.671875, 185.46094, 1.7421875, -45.507813, 251.82813, 118.17969, 365.42188, -1.3984375, 331.35938, 97.47656, 430.65625, 166.21094, 368.84375, 131.54688, 344.47656, 198.75781, 530.4297, 255.89844, 539, 159.71094, 728.47656, 230.14844, 539, 60.6875, 779.90625, 45.273438, 807.3906, 189.27344)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(5, 4, 6, 7), PackedInt32Array(8, 7, 6, 9), PackedInt32Array(9, 6, 10, 11), PackedInt32Array(11, 10, 12, 13, 14)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(730, 235, 530, 261, 338, 202, 363, 133, 330, 103, 257, 122, 261, 215, -64, 190, -2, -51, 369, -6, 434, 161, 534, 155, 534, 56, 784, 40, 813, 192)])
+agent_radius = 5.0
+
 [node name="Level" type="Node2D" unique_id=231704338]
 script = ExtResource("1_0f350")
 
 [node name="Barracks" parent="." unique_id=459267182 instance=ExtResource("3_6phgx")]
 position = Vector2(68, 166)
 
-[node name="EnemyFootman" parent="." unique_id=589809425 instance=ExtResource("2_k5f4k")]
+[node name="EnemyFootman" parent="." unique_id=589809425 node_paths=PackedStringArray("goal") instance=ExtResource("2_k5f4k")]
 position = Vector2(294, 47)
+unit_data = ExtResource("4_bvt00")
+goal = NodePath("../Barracks")
 
-[node name="EnemyFootman2" parent="." unique_id=209799906 instance=ExtResource("2_k5f4k")]
-position = Vector2(610, 82)
+[node name="EnemyFootman2" parent="." unique_id=209799906 node_paths=PackedStringArray("goal") instance=ExtResource("2_k5f4k")]
+position = Vector2(563, 84)
+unit_data = ExtResource("4_bvt00")
+goal = NodePath("../Barracks")
 
-[node name="EnemyFootman3" parent="." unique_id=433091794 instance=ExtResource("2_k5f4k")]
-position = Vector2(486, 102)
+[node name="EnemyFootman3" parent="." unique_id=433091794 node_paths=PackedStringArray("goal") instance=ExtResource("2_k5f4k")]
+position = Vector2(663, 136)
+unit_data = ExtResource("4_bvt00")
+goal = NodePath("../Barracks")
 
-[node name="EnemyFootman4" parent="." unique_id=151206520 instance=ExtResource("2_k5f4k")]
-position = Vector2(364, 180)
+[node name="EnemyFootman4" parent="." unique_id=151206520 node_paths=PackedStringArray("goal") instance=ExtResource("2_k5f4k")]
+position = Vector2(394, 203)
+unit_data = ExtResource("4_bvt00")
+goal = NodePath("../Barracks")
 
-[node name="EnemyFootman5" parent="." unique_id=610491336 instance=ExtResource("2_k5f4k")]
+[node name="EnemyFootman5" parent="." unique_id=610491336 node_paths=PackedStringArray("goal") instance=ExtResource("2_k5f4k")]
 position = Vector2(528, 209)
+unit_data = ExtResource("4_bvt00")
+goal = NodePath("../Barracks")
 
-[node name="EnemyFootman6" parent="." unique_id=899177180 instance=ExtResource("2_k5f4k")]
+[node name="EnemyFootman6" parent="." unique_id=899177180 node_paths=PackedStringArray("goal") instance=ExtResource("2_k5f4k")]
 position = Vector2(757, 160)
+unit_data = ExtResource("4_bvt00")
+goal = NodePath("../Barracks")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1528778811]
 position = Vector2(490, 247)
 
-[node name="EnemySpawner" parent="." unique_id=579454150 instance=ExtResource("4_wqkje")]
+[node name="EnemySpawner" parent="." unique_id=579454150 node_paths=PackedStringArray("goal") instance=ExtResource("4_wqkje")]
 position = Vector2(749, 97)
+goal = NodePath("../Barracks")
 
 [node name="HUD" parent="." unique_id=542633204 instance=ExtResource("4_81xng")]
 
@@ -53,7 +73,7 @@ visible = false
 position = Vector2(-62, -18)
 
 [node name="Rock" type="StaticBody2D" parent="." unique_id=934960808]
-position = Vector2(284, 179)
+position = Vector2(313, 150)
 collision_layer = 16
 collision_mask = 35
 
@@ -63,3 +83,18 @@ shape = SubResource("CircleShape2D_g4v7s")
 [node name="Sprite2D" type="Sprite2D" parent="Rock" unique_id=314818540]
 position = Vector2(0, -2)
 texture = ExtResource("8_754fn")
+
+[node name="Rock2" type="StaticBody2D" parent="." unique_id=1707256952]
+position = Vector2(472, 113)
+collision_layer = 16
+collision_mask = 35
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock2" unique_id=121207899]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rock2" unique_id=302103166]
+position = Vector2(0, -2)
+texture = ExtResource("8_754fn")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=936751749]
+navigation_polygon = SubResource("NavigationPolygon_bvt00")
